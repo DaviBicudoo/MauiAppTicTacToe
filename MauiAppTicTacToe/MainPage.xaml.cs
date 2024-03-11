@@ -1,5 +1,4 @@
-﻿
-namespace MauiAppTicTacToe
+﻿namespace MauiAppTicTacToe
 {
     public partial class MainPage : ContentPage
     {
@@ -14,6 +13,8 @@ namespace MauiAppTicTacToe
         private void Button_Clicked(System.Object sender, System.EventArgs e)
         {
             Button trigger = (Button)sender;
+
+            Grid mainGrid = new Grid();
 
             trigger.IsEnabled = false;
 
@@ -109,10 +110,15 @@ namespace MauiAppTicTacToe
                 }
             }
         }
+        private void CleanUp()
+        {
+            btn01.Text = "";
+            btn01.IsEnabled = true;
+        }
 
         private void resetGameButton_Clicked(object sender, EventArgs e)
         {
-            // Reset game
+            CleanUp();   
         }
     }
 }
